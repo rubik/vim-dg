@@ -5,6 +5,7 @@
 function! dg#DgSetUpVariables()
   if !exists("g:dg_highlight_all")
     let g:dg_highlight_all = 1
+  endif
   if exists("g:dg_highlight_all") && g:dg_highlight_all != 0
     " Not override previously set options
     if !exists("g:dg_highlight_builtins")
