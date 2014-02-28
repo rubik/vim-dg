@@ -44,7 +44,7 @@ syn match dgBinError "\<0[bB][01]*[2-9]\d*[lL]\=\>" display
 syn match dgHexError "\<0[xX]\x*[g-zG-Z]\x*[lL]\=\>" display
 
 " Builtins
-if g:dg_highlight_builtin_obj != 0
+if g:dg_highlight_builtin_objs != 0
   syn keyword dgBuiltinObj True False Ellipsis None NotImplemented
   syn keyword dgBuiltinObj __debug__ __doc__ __file__ __name__ __package__
 endif
@@ -71,27 +71,27 @@ endif
 
 if g:dg_highlight_exceptions != 0
   " Builtin exceptions and warnings
-  syn keyword dgExClass	BaseException
-  syn keyword dgExClass	Exception StandardError ArithmeticError
-  syn keyword dgExClass	LookupError EnvironmentError
+  syn keyword dgExClass BaseException
+  syn keyword dgExClass Exception StandardError ArithmeticError
+  syn keyword dgExClass LookupError EnvironmentError
 
-  syn keyword dgExClass	AssertionError AttributeError BufferError EOFError
-  syn keyword dgExClass	FloatingPointError GeneratorExit IOError
-  syn keyword dgExClass	ImportError IndexError KeyError
-  syn keyword dgExClass	KeyboardInterrupt MemoryError NameError
-  syn keyword dgExClass	NotImplementedError OSError OverflowError
-  syn keyword dgExClass	ReferenceError RuntimeError StopIteration
-  syn keyword dgExClass	SyntaxError IndentationError TabError
-  syn keyword dgExClass	SystemError SystemExit TypeError
-  syn keyword dgExClass	UnboundLocalError UnicodeError
-  syn keyword dgExClass	UnicodeEncodeError UnicodeDecodeError
-  syn keyword dgExClass	UnicodeTranslateError ValueError VMSError
-  syn keyword dgExClass	WindowsError ZeroDivisionError
+  syn keyword dgExClass AssertionError AttributeError BufferError EOFError
+  syn keyword dgExClass FloatingPointError GeneratorExit IOError
+  syn keyword dgExClass ImportError IndexError KeyError
+  syn keyword dgExClass KeyboardInterrupt MemoryError NameError
+  syn keyword dgExClass NotImplementedError OSError OverflowError
+  syn keyword dgExClass ReferenceError RuntimeError StopIteration
+  syn keyword dgExClass SyntaxError IndentationError TabError
+  syn keyword dgExClass SystemError SystemExit TypeError
+  syn keyword dgExClass UnboundLocalError UnicodeError
+  syn keyword dgExClass UnicodeEncodeError UnicodeDecodeError
+  syn keyword dgExClass UnicodeTranslateError ValueError VMSError
+  syn keyword dgExClass WindowsError ZeroDivisionError
 
-  syn keyword dgExClass	Warning UserWarning BytesWarning DeprecationWarning
-  syn keyword dgExClass	PendingDepricationWarning SyntaxWarning
-  syn keyword dgExClass	RuntimeWarning FutureWarning
-  syn keyword dgExClass	ImportWarning UnicodeWarning
+  syn keyword dgExClass Warning UserWarning BytesWarning DeprecationWarning
+  syn keyword dgExClass PendingDepricationWarning SyntaxWarning
+  syn keyword dgExClass RuntimeWarning FutureWarning
+  syn keyword dgExClass ImportWarning UnicodeWarning
 endif
 
 syn region dgBacktick start="`" end="`" keepend
