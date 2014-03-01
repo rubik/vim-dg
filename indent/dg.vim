@@ -250,7 +250,7 @@ function! s:GetDefaultPolicy(curlnum)
   endif
 endfunction
 
-function! GetCoffeeIndent(curlnum)
+function! GetDgIndent(curlnum)
   " Get the previous non-blank line (may be a comment.)
   let prevlnum = prevnonblank(a:curlnum - 1)
 
