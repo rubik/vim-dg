@@ -25,10 +25,10 @@ endif
 
 " Keywords that begin a block
 let s:BEGIN_BLOCK_KEYWORD = '\C^\%(if\|otherwise\|for\|while\|where\|'
-\                         . 'with\|except\|finally\)\>\%(\s*:\)\@!'
+\                         . 'with\|except\|finally\)\@!'
 
 " An expression that uses the result of a statement
-let s:COMPOUND_EXPRESSION = '\C\%([^-]-\|[^+]+\|[^/]/\|[:=*%&|^<>]\)\s*'
+let s:COMPOUND_EXPRESSION = '\C\%([^-]-\|[^+]+\|[^/]/\|[=*%&|^<>]\)\s*'
 \                         . '\%(if\|otherwise\|for\|while\|where\|'
 \                         . 'except\)\>'
 
