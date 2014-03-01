@@ -29,6 +29,7 @@ syn keyword dgOperator or and not is in
 syn match dgSpecialOperator /=>/
 syn match dgSpecialOperator /\$/
 syn match dgSpecialOperator /->/
+syn match dgSpecialOperator /\~>/
 syn match dgSpecialOperator /<-/
 
 " Numbers (ints, longs, floats, complex)
