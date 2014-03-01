@@ -24,7 +24,7 @@ else
 endif
 
 " Keywords that begin a block
-let s:BEGIN_BLOCK_KEYWORD = '\C^\%(if\|otherwise\|for\|while\|where\|'
+let s:BEGIN_BLOCK_KEYWORD = '\C\%(if\|otherwise\|for\|while\|where\|'
 \                         . 'with\|except\|finally\)\@!'
 
 " An expression that uses the result of a statement
