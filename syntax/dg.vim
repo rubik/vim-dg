@@ -14,9 +14,8 @@ endif
 call dg#DgSetUpVariables()
 
 syn match dgOperator "\(==\|!=\|>=\|<=\|\.\~\?\|!!\~\?\|>\|<\)" skipwhite
-syn match dgOperator "\(|\|&\|/\)" skipwhite
-syn match dgOperator "\(||\|&&\|//\|\^\|[-+.%]\)" skipwhite
-syn match dgOperator "\(::\|:=\|\*\*\?\|\~\|<<\|>>\)" skipwhite
+syn match dgOperator "\(|\|&\|/\|//\|\^\|\*\*\?\|\~\|<<\|>>\|[-+.%]\)=\?" skipwhite
+syn match dgOperator "\(::\|:=\)" skipwhite
 syn keyword dgOperator or and not is in
 syn match dgSpecialOperator /=>/
 syn match dgSpecialOperator /\$/
