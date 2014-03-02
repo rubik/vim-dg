@@ -78,7 +78,7 @@ let s:SINGLE_LINE_ELSE = '\C^otherwise\s\+\%(\<if\>\)\@!'
 "\]
 
 " Pairs of starting and ending brackets
-let s:BRACKET_PAIRS = {')': '('}
+let s:BRACKET_PAIRS = {'}': '{', ')': '('}
 
 " Max lines to look back for a match
 let s:MAX_LOOKBACK = 50
