@@ -13,8 +13,9 @@ endif
 
 call dg#DgSetUpVariables()
 
-syn match dgOperator "\(==\|!=\|>=\|<=\|.\~\?\|!!\~\?\|>\|<\|=\)" skipwhite
-syn match dgOperator "||\|&&\|[-+.]" skipwhite
+syn match dgOperator "\(==\|!=\|>=\|<=\|\.\~\?\|!!\~\?\|>\|<\)" skipwhite
+syn match dgOperator "\(|\|&\|/\)" skipwhite
+syn match dgOperator "\(||\|&&\|//\|\^\|[-+.%]\)" skipwhite
 syn match dgOperator "\(::\|:=\|\*\*\?\|\~\|<<\|>>\)" skipwhite
 syn keyword dgOperator or and not is in
 syn match dgSpecialOperator /=>/
@@ -56,9 +57,11 @@ if g:dg_highlight_builtin_funcs != 0
   " dg-specific builtins
   syn keyword dgBuiltinFunc bind break continue flip foldl foldl1 drop dropwhile
   syn keyword dgBuiltinFunc iterate scanl scanl1 take takewhile
+  syn keyword dgBuiltinFunc exhaust head fst snd tail init last
   syn match dgBuiltinFunc /list'/
   syn match dgBuiltinFunc /tuple'/
   syn match dgBuiltinFunc /dict'/
+  syn match dgBuiltinFunc "\(:+\|+:\)"
 endif
 
 if g:dg_highlight_exceptions != 0
@@ -90,7 +93,7 @@ syn region dgBacktick start="`" end="`" keepend
 
 " Statements
 syn keyword dgStatement if while for where subclass yield qualified import
-syn keyword dgStatement otherwise raise except with
+syn keyword dgStatement otherwise raise except with finally
 
 " Comments
 syn match dgComment "#.*$" display
