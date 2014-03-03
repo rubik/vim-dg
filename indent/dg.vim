@@ -24,16 +24,7 @@ else
 endif
 
 " Keywords that begin a block
-let s:BEGIN_BLOCK_KEYWORD = '\C\%(if\|otherwise\|for\|while\|where\|'
-\                         . 'with\|except\|finally\)'
-
-" An expression that uses the result of a statement
-let s:COMPOUND_EXPRESSION = '\C\%([^-]-\|[^+]+\|[^/]/\|[=*%&|^<>]\)\s*'
-\                         . '\%(if\|otherwise\|for\|while\|where\|'
-\                         . 'except\)\>'
-
-" Combine the two above
-let s:BEGIN_BLOCK = s:BEGIN_BLOCK_KEYWORD . '\|' . s:COMPOUND_EXPRESSION
+let s:BEGIN_BLOCK_KEYWORD = '\C\%(if\|where\|except\|finally\)\s*\(#\.*\)\?'
 
 " Operators that begin a block but also count as a continuation
 let s:BEGIN_BLOCK_OP = '[([{:=]$'
@@ -336,7 +327,7 @@ function! GetDgIndent(curlnum)
   endif
 
   " Check if the previous line starts with a keyword that begins a block.
-  if prevline =~ s:BEGIN_BLOCK
+  if prevline =~ s:BEGIN_BLOCK_KEYWORD
       exec 'return' s:GetDefaultPolicy(a:curlnum)
     endif
   endif
