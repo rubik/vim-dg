@@ -56,6 +56,7 @@ if g:dg_highlight_builtin_funcs != 0
   syn match dgBuiltinFunc /list'/
   syn match dgBuiltinFunc /tuple'/
   syn match dgBuiltinFunc /dict'/
+  syn match dgBuiltinFunc /set'/
   syn match dgBuiltinFunc "\(:+\|+:\)"
 endif
 

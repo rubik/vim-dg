@@ -12,8 +12,8 @@ setlocal autoindent
 setlocal indentexpr=GetDgIndent(v:lnum)
 " Make sure GetDgIndent is run when these are typed so they can be indented or
 " outdented
-setlocal indentkeys+=0],0),0.,->,~>,=>,=if,=except,=for,=while,=where,=with
-setlocal indentkeys+==otherwise
+setlocal indentkeys+=0],0),0.,->,~>,=>
+setlocal indentkeys+==except,=where,=if
 
 " If no indenting or outdenting is needed, either keep the indent of the cursor
 " (use autoindent) or match the indent of the previous line.
@@ -25,7 +25,7 @@ endif
 
 " Keywords that begin a block
 let s:BEGIN_BLOCK_KEYWORD = '\C\%(if\|otherwise\|for\|while\|where\|'
-\                         . 'with\|except\|finally\)\@!'
+\                         . 'with\|except\|finally\)'
 
 " An expression that uses the result of a statement
 let s:COMPOUND_EXPRESSION = '\C\%([^-]-\|[^+]+\|[^/]/\|[=*%&|^<>]\)\s*'
@@ -285,24 +285,6 @@ function! GetDgIndent(curlnum)
       exec 'return' s:GetDefaultPolicy(a:curlnum)
     endif
   endif
-
-  " Check if the current line is the closing keyword in a keyword pair.
-  for pair in s:KEYWORD_PAIRS
-    if curline =~ pair[0]
-      " Find the nearest and farthest matches within the same indent level.
-      let matches = s:SearchMatchingKeyword(a:curlnum, pair[1], pair[2])
-
-      if len(matches)
-        " Don't force indenting/outdenting as long as line is already lined up
-        " with a valid match
-        return max([min([indent(a:curlnum), indent(matches[0])]),
-        \           indent(matches[1])])
-      else
-        " No starting keyword found (bad syntax), so bail.
-        exec 'return' s:GetDefaultPolicy(a:curlnum)
-      endif
-    endif
-  endfor
 
   " If the previous line is a comment, use its indentation, but don't force
   " indenting.
