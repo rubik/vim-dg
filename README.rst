@@ -146,6 +146,7 @@ If set to true, Vim will highlight whitespace errors.
 So, if you don't touch anything, Vim will set these vars for you:
 
 .. code-block:: vim
+
     let g:dg_highlight_builtin_objs = 1
     let g:dg_highlight_builtin_funcs = 1
     let g:dg_highlight_exceptions = 1
