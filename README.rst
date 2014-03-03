@@ -86,7 +86,7 @@ instead keeps the current indent of the cursor, use
 
     let dg_indent_keep_current = 1
 
-*Default*: `unlet dg_indent_keep_current`
+*Default*: ``unlet dg_indent_keep_current``
 
 Note that if you change this after a dg file has been loaded, you'll have to
 reload the indent script for the change to take effect::
@@ -99,52 +99,53 @@ Highlighting
 
 **dg_highlight_all**
 
-If unset or set to `1`, every other highlight-related variable will be set to
-`1` (but only if unset).
+If unset or set to `1``, every other highlight-related variable will be set to
+`1`` (but only if unset).
 
-*Default*: `let g:dg_highlight_all = 1`
+*Default*: ```let g:dg_highlight_all = 1```
 
 **dg_highlight_builtins**
 
 If set and true, the other builtin-related variables will be set to true (only
 if unset).
 
-*Default*: `let g:dg_highlight_builtins = 1`
+*Default*: ``let g:dg_highlight_builtins = 1``
 
 **dg_highlight_builtin_objs**
 
 If set to true, Vim will highlight built-in objects like `True`, `False`,
 `None`, etc.
 
-*Default*: `let g:dg_highlight_builtin_objs = 1`
+*Default*: ``let g:dg_highlight_builtin_objs = 1``
 
 **dg_highlight_builtin_funcs**
 
 If set to true, Vim will also highlight built-in functions.
 
-*Default*: `let g:dg_highlight_builtin_funcs = 1`
+*Default*: ``let g:dg_highlight_builtin_funcs = 1``
 
 **dg_highlight_exceptions**
 
 If set to true, Vim will highlight built-in exceptions.
 
-*Default*: `let g:dg_highlight_exceptions = 1`
+*Default*: ``let g:dg_highlight_exceptions = 1``
 
 **dg_highlight_indent_errors**
 
 If set to true, Vim will highlight indenting errors (like mixing tabs and
 spaces).
 
-*Default*: `let g:dg_highlight_indent_errors = 1`
+*Default*: ``let g:dg_highlight_indent_errors = 1``
 
 **dg_highlight_space_errors**
 
 If set to true, Vim will highlight whitespace errors.
 
-*Default*: `let g:dg_highlight_space_errors = 1`
+*Default*: ``let g:dg_highlight_space_errors = 1``
 
-So, if you don't touch anything, Vim will set these vars for you::
+So, if you don't touch anything, Vim will set these vars for you:
 
+.. code-block:: vim
     let g:dg_highlight_builtin_objs = 1
     let g:dg_highlight_builtin_funcs = 1
     let g:dg_highlight_exceptions = 1
