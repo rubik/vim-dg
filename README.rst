@@ -1,7 +1,7 @@
 This project adds `dg <https://pyos.github.com/dg/>`_ support to Vim. It covers
 syntax and indenting.
 
-.. image:: https://f.cloud.github.com/assets/238549/2308482/e69ef322-a2be-11e3-88a8-39aa66cc9197.png
+.. image:: https://f.cloud.github.com/assets/238549/2309409/7fd61788-a2d2-11e3-944d-deeea65bcff9.png
    :alt: Syntax highlighting for dg with the Solarized Dark colorscheme.
    :align: center
 
