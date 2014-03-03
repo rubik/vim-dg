@@ -23,7 +23,9 @@ Installation
 Using Pathogen
 ++++++++++++++
 
-Just make sure you have the following lines in your `.vimrc`::
+Just make sure you have the following lines in your `.vimrc`:
+
+.. code-block:: vim
 
     call pathogen#infect()
     syntax enable
@@ -34,7 +36,9 @@ And then install `vim-dg` as any other Pathogen plugin.
 Using Vundle
 ++++++++++++
 
-Check that you have the following lines (in this order) in your `.vimrc`::
+Check that you have the following lines (in this order) in your `.vimrc`:
+
+.. code-block:: vim
 
     set nocompatible
     filetype off
