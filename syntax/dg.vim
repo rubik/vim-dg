@@ -15,7 +15,7 @@ call dg#DgSetUpVariables()
 
 syn match dgOperator "\(==\|!=\|>=\|<=\|\.\~\?\|!!\~\?\|>\|<\)" skipwhite
 syn match dgOperator "\(!!\||\|&\|/\|//\|\^\|\*\*\?\|<<\|>>\|[-+.%]\)=\?" skipwhite
-syn match dgOperator "\(::\|:=\|\~\)" skipwhite
+syn match dgOperator "\(::\|:=\|\~\|:+\|+:\)" skipwhite
 syn keyword dgOperator or and not is in
 syn match dgSpecialOperator "\(=>\|\$\|->\|\~>\|<-\)"
 
@@ -57,7 +57,6 @@ if g:dg_highlight_builtin_funcs != 0
   syn match dgBuiltinFunc /tuple'/
   syn match dgBuiltinFunc /dict'/
   syn match dgBuiltinFunc /set'/
-  syn match dgBuiltinFunc "\(:+\|+:\)"
 endif
 
 if g:dg_highlight_exceptions != 0
