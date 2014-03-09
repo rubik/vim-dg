@@ -164,7 +164,6 @@ endfunction
 "    expression
 function! s:ShouldSkip(startlnum, lnum, col)
   return s:IsCommentOrString(a:lnum, a:col) ||
-  \      s:SearchCode(a:lnum, '\C\<then\>') && a:startlnum - a:lnum > 1 ||
   \      s:SearchCode(a:lnum, s:POSTFIX_CONDITION) &&
   \     !s:SearchCode(a:lnum, s:COMPOUND_EXPRESSION)
 endfunction
@@ -328,8 +327,7 @@ function! GetDgIndent(curlnum)
 
   " Check if the previous line starts with a keyword that begins a block.
   if prevline =~ s:BEGIN_BLOCK_KEYWORD
-      exec 'return' s:GetDefaultPolicy(a:curlnum)
-    endif
+    return indent(prevnlnum) + s:ShiftWidth()
   endif
 
   " Indent a dot access if it's the first.
