@@ -15,6 +15,9 @@ function! dg#DgSetUpVariables()
       if !exists("g:dg_highlight_builtin_funcs")
         let g:dg_highlight_builtin_funcs = 1
       endif
+    else
+      let g:dg_highlight_builtin_objs = g:dg_highlight_builtins
+      let g:dg_highlight_builtin_funcs = g:dg_highlight_builtins
     endif
     if !exists("g:dg_highlight_exceptions")
       let g:dg_highlight_exceptions = 1
