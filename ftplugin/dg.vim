@@ -8,3 +8,4 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal autoindent
 setlocal smarttab
+setlocal commentstring=#%s
